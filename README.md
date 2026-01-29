@@ -8,7 +8,8 @@ While Shopware 6 has support for webhooks using their Flow Builder, it requires 
 Webhooks can help automate workflows and integrate your Shopware store with other services. For example, you can use webhooks to integrate with N8N, Zapier, or custom applications to perform actions like sending notifications, updating external databases, or triggering other processes.
 
 ## Supported Events
-- Order Created
-- Customer Registered
-- Product Updated
-- Order Status Changed
+- [x] Ping CLI called
+- [x] Order Created
+- [] Customer Registered
+- [] Product Updated
+- [] Order Status Changed
