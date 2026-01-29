@@ -15,10 +15,16 @@
         <!-- Subscriber for Order/Checkout events -->
         <service
             id="SimpleWebhooks\Subscriber\OrderSubscriber">
-            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="messenger.bus.shopware" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+        <!-- Async Webhook Message Handler -->
+        <service id="SimpleWebhooks\MessageHandler\WebhookMessageHandler">
             <argument type="service" id="http_client" />
             <argument type="service" id="logger" />
-            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <tag name="messenger.message_handler" />
         </service>
 
         <!-- Ping Command Subscriber -->
