@@ -11,5 +11,5 @@ Webhooks can help automate workflows and integrate your Shopware store with othe
 - [x] Ping CLI called
 - [x] Order Created
 - [x] Customer Registered
+- [x] Order Status Changed
 - [ ] Product Updated
-- [ ] Order Status Changed

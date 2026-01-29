@@ -24,6 +24,8 @@
         <service
             id="SimpleWebhooks\Subscriber\OrderSubscriber">
             <argument type="service" id="messenger.bus.default" />
+            <argument type="service" id="order_transaction.repository" />
+            <argument type="service" id="order_delivery.repository" />
             <tag name="kernel.event_subscriber" />
         </service>
 
