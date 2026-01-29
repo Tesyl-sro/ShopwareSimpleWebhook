@@ -15,7 +15,7 @@
         <!-- Subscriber for Order/Checkout events -->
         <service
             id="SimpleWebhooks\Subscriber\OrderSubscriber">
-            <argument type="service" id="messenger.bus.shopware" />
+            <argument type="service" id="messenger.bus.default" />
             <tag name="kernel.event_subscriber" />
         </service>
 
@@ -31,7 +31,7 @@
         <service
             id="SimpleWebhooks\Subscriber\PingedSubscriber">
             <argument type="service" id="logger" />
-            <argument type="service" id="messenger.bus.shopware" />
+            <argument type="service" id="messenger.bus.default" />
             <tag name="kernel.event_subscriber" />
         </service>
     </services>
