@@ -28,7 +28,6 @@ class OrderSubscriber implements EventSubscriberInterface
     {
         $order = $event->getOrder();
 
-        // Dispatch message to queue - returns immediately!
         $this->messageBus->dispatch(
             new WebhookMessage(
                 $order->getId(),
