@@ -10,6 +10,6 @@ Webhooks can help automate workflows and integrate your Shopware store with othe
 ## Supported Events
 - [x] Ping CLI called
 - [x] Order Created
-- [] Customer Registered
-- [] Product Updated
-- [] Order Status Changed
+- [ ] Customer Registered
+- [ ] Product Updated
+- [ ] Order Status Changed
