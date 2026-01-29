@@ -17,6 +17,13 @@
         </input-field>
 
         <input-field type="url">
+            <name>productUpdateWebhook</name>
+            <label>Webhook to call when a CRUD operation is made on a product or a bulk of products.
+                Bulk edits will call the specified webhook for every item separately, so allow
+                high/frequent traffic.</label>
+        </input-field>
+
+        <input-field type="url">
             <name>customerRegistrationWebhook</name>
             <label>Webhook to call when a customer creates an account</label>
         </input-field>

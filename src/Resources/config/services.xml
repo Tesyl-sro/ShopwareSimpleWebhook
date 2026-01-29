@@ -36,6 +36,13 @@
             <tag name="kernel.event_subscriber" />
         </service>
 
+        <!-- Subscriber for product events -->
+        <service
+            id="SimpleWebhooks\Subscriber\ProductSubscriber">
+            <argument type="service" id="messenger.bus.default" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
         <!-- Subscriber for CLI ping -->
         <service
             id="SimpleWebhooks\Subscriber\PingedSubscriber">

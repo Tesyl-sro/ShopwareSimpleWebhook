@@ -12,4 +12,4 @@ Webhooks can help automate workflows and integrate your Shopware store with othe
 - [x] Order Created
 - [x] Customer Registered
 - [x] Order Status Changed
-- [ ] Product Updated
+- [x] Product Updated
