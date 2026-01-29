@@ -21,6 +21,21 @@ Note that all webhooks use POST requests with a JSON payload containing relevant
 
 If you need to temporarily disable all webhooks, you can use the "Enable webhooks" toggle in the configuration.
 
+## Schema
+All event payloads follow a simple schema:
+
+```json
+{
+    "event": "event_name",
+    "timestamp": "2024-01-01T12:00:00Z",
+    "data": {
+        /* event-specific data */
+    }
+}
+```
+
+The event name is also passed as a HTTP header named `X-Shopware-Event` for convenience.
+
 ## Webhook call processing
 All webhook calls are processed asynchronously using Shopware's built-in message queue system. This ensures that your store's performance is not affected by webhook calls, especially if the target URL is slow to respond.
 
