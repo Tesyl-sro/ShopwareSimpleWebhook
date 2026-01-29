@@ -27,6 +27,11 @@ class WebhookMessageHandler
 
     public function __invoke(WebhookMessage $message): void
     {
+        if (!$this->systemConfigService->getBool("SimpleWebhooks.config.enabled")) {
+            $this->logDebug($message->getEventName(), "Plugin disabled");
+            return;
+        }
+
         $webhookUrl = (string) $this->systemConfigService->get($message->getUrlConfigKey());
 
         if ($webhookUrl == null) {
