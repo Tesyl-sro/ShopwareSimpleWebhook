@@ -38,5 +38,7 @@ class PingedSubscriber implements EventSubscriberInterface
                 "cli.ping"
             )
         );
+
+        $this->logger->debug("Ping webhook dispatched");
     }
 }
