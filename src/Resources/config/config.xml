@@ -6,37 +6,43 @@
     <card>
         <title>Configuration</title>
 
+        <input-field type="bool">
+            <name>enabled</name>
+            <label>Enable webhooks</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
         <input-field type="url">
             <name>newOrderWebhook</name>
-            <label>Webhook to call for new orders</label>
+            <label>Webhook to call for new orders:</label>
         </input-field>
 
         <input-field type="url">
             <name>orderStatusUpdatedWebhook</name>
-            <label>Webhook to call when an order status is changed</label>
+            <label>Webhook to call when an order status is changed:</label>
         </input-field>
 
         <input-field type="url">
             <name>productUpdateWebhook</name>
-            <label>Webhook to call when a CRUD operation is made on a product or a bulk of products.
-                Bulk edits will call the specified webhook for every item separately, so allow
-                high/frequent traffic.</label>
+            <label>Webhook to call when a CRUD operation is made on a product or a bulk of products:</label>
+            <helpText>Bulk edits will call the specified webhook for every item separately, so allow
+                high/frequent traffic.</helpText>
         </input-field>
 
         <input-field type="url">
             <name>customerRegistrationWebhook</name>
-            <label>Webhook to call when a customer creates an account</label>
+            <label>Webhook to call when a customer creates an account:</label>
         </input-field>
 
         <input-field type="url">
             <name>pingWebhook</name>
-            <label>Webhook to call when pinged using CLI</label>
+            <label>Webhook to call when pinged using CLI:</label>
         </input-field>
 
         <input-field type="bool">
             <name>allowCliPing</name>
             <label>Allow CLI Ping</label>
-            <helpText>Enable or disable the ping CLI command</helpText>
+            <helpText>Enable or disable the ping CLI command:</helpText>
             <defaultValue>false</defaultValue>
         </input-field>
     </card>
