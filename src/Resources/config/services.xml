@@ -31,6 +31,7 @@
         <service
             id="SimpleWebhooks\Subscriber\PingedSubscriber">
             <argument type="service" id="logger" />
+            <argument type="service" id="messenger.bus.shopware" />
             <tag name="kernel.event_subscriber" />
         </service>
     </services>
