@@ -5,6 +5,7 @@ namespace SimpleWebhooks\Subscriber;
 use Psr\Log\LoggerInterface;
 use SimpleWebhooks\Event\PingedEvent;
 use SimpleWebhooks\Message\WebhookMessage;
+use SimpleWebhooks\Utils;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
@@ -36,7 +37,8 @@ class PingedSubscriber implements EventSubscriberInterface
         $this->messageBus->dispatch(
             new WebhookMessage(
                 "cli.ping",
-                "SimpleWebhooks.config.pingWebhook"
+                "SimpleWebhooks.config.pingWebhook",
+                Utils\Common::buildWebhookPayload("cli.ping", null)
             )
         );
 
