@@ -12,13 +12,6 @@
             <tag name="console.command" />
         </service>
 
-        <!-- Subscriber for Order/Checkout events -->
-        <service
-            id="SimpleWebhooks\Subscriber\OrderSubscriber">
-            <argument type="service" id="messenger.bus.default" />
-            <tag name="kernel.event_subscriber" />
-        </service>
-
         <!-- Async Webhook Message Handler -->
         <service id="SimpleWebhooks\MessageHandler\WebhookMessageHandler">
             <argument type="service" id="http_client" />
@@ -27,7 +20,21 @@
             <tag name="messenger.message_handler" />
         </service>
 
-        <!-- Ping Command Subscriber -->
+        <!-- Subscriber for Order/Checkout events -->
+        <service
+            id="SimpleWebhooks\Subscriber\OrderSubscriber">
+            <argument type="service" id="messenger.bus.default" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+        <!-- Subscriber for customer registration events -->
+        <service
+            id="SimpleWebhooks\Subscriber\CustomerSubscriber">
+            <argument type="service" id="messenger.bus.default" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+        <!-- Subscriber for CLI ping -->
         <service
             id="SimpleWebhooks\Subscriber\PingedSubscriber">
             <argument type="service" id="logger" />

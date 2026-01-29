@@ -12,6 +12,16 @@
         </input-field>
 
         <input-field type="url">
+            <name>orderStatusUpdatedWebhook</name>
+            <label>Webhook to call when an order status is changed</label>
+        </input-field>
+
+        <input-field type="url">
+            <name>customerRegistrationWebhook</name>
+            <label>Webhook to call when a customer creates an account</label>
+        </input-field>
+
+        <input-field type="url">
             <name>pingWebhook</name>
             <label>Webhook to call when pinged using CLI</label>
         </input-field>
