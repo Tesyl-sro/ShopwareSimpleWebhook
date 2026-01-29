@@ -30,7 +30,7 @@ class OrderSubscriber implements EventSubscriberInterface
 
         $this->messageBus->dispatch(
             new WebhookMessage(
-                $order->getId(),
+                $event->getName(),
                 "SimpleWebhooks.config.newOrderWebhook",
                 Utils\Common::buildWebhookPayload($event->getName(), $order->jsonSerialize())
             )
