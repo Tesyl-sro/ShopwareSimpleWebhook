@@ -27,7 +27,12 @@ class WebhookMessageHandler
 
     public function __invoke(WebhookMessage $message): void
     {
-        $webhookUrl = (string) $this->systemConfigService->get('SimpleWebhooks.config.productLoadedWebhook');
+        $webhookUrl = (string) $this->systemConfigService->get($message->getUrlConfigKey());
+
+        if ($webhookUrl == null) {
+            $this->logError($message->getEventName(), "invalid configuration key");
+            return;
+        }
 
         if (empty($webhookUrl)) {
             $this->logDebug($message->getEventName(), "empty webhook URL");

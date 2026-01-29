@@ -35,7 +35,8 @@ class PingedSubscriber implements EventSubscriberInterface
 
         $this->messageBus->dispatch(
             new WebhookMessage(
-                "cli.ping"
+                "cli.ping",
+                "SimpleWebhooks.config.pingWebhook"
             )
         );
 
