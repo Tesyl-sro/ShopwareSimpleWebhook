@@ -5,9 +5,9 @@ namespace SimpleWebhooks\Message;
 class WebhookMessage
 {
     private string $event_name;
-    private array $payload;
+    private ?array $payload;
 
-    public function __construct(string $event_name, array $payload)
+    public function __construct(string $event_name, ?array $payload = null)
     {
         $this->event_name = $event_name;
         $this->payload = $payload;
@@ -18,7 +18,7 @@ class WebhookMessage
         return $this->event_name;
     }
 
-    public function getPayload(): array
+    public function getPayload(): ?array
     {
         return $this->payload;
     }
