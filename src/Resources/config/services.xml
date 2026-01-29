@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Ping CLI Command -->
+        <service id="SimpleWebhooks\Command\PingCommand">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="event_dispatcher" />
+            <tag name="console.command" />
+        </service>
+
+        <!-- Subscriber for Order/Checkout events -->
+        <service
+            id="SimpleWebhooks\Subscriber\OrderSubscriber">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <argument type="service" id="http_client" />
+            <argument type="service" id="logger" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+        <!-- Ping Command Subscriber -->
+        <service
+            id="SimpleWebhooks\Subscriber\PingedSubscriber">
+            <argument type="service" id="logger" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+    </services>
+</container>

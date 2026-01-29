@@ -1,0 +1,32 @@
+{
+    "name": "simple-webhooks/simple-webhooks",
+    "description": "simple-webhooks/simple-webhooks",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.7.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "SimpleWebhooks\\SimpleWebhooks",
+        "label": {
+            "de-DE": "SimpleWebhooks",
+            "en-GB": "SimpleWebhooks"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleWebhooks\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleWebhooks\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}

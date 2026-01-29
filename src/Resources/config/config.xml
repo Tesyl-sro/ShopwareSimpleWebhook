@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Configuration</title>
+
+        <input-field type="url">
+            <name>newOrderWebhook</name>
+            <label>Webhook to call for new orders</label>
+        </input-field>
+
+        <input-field type="url">
+            <name>pingWebhook</name>
+            <label>Webhook to call when pinged using CLI</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>allowCliPing</name>
+            <label>Allow CLI Ping</label>
+            <helpText>Enable or disable the ping CLI command</helpText>
+            <defaultValue>false</defaultValue>
+        </input-field>
+    </card>
+
+</config>
