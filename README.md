@@ -17,7 +17,7 @@ Download the plugin repository and place it in the `custom/plugins` directory of
 ## Configuration
 In the configuration panel, just fill out the webhook URLs for the events you want to listen to. You can leave any field empty if you don't want to set up a webhook for that event.
 
-Note that all webhooks use POST requests with a JSON payload containing relevant data about the event. Currently, you cannot customize the HTTP method.
+Note that all webhooks use POST requests with a JSON payload containing relevant data about the event. Currently, you cannot change the HTTP method.
 
 If you need to temporarily disable all webhooks, you can use the "Enable webhooks" toggle in the configuration.
 
